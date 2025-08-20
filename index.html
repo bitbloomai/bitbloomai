@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -86,33 +86,15 @@
                 mercado.</h2>
             <button onclick="redirect()">Saiba mais</button></a>
         </section>
-        <section id="services" class="services">
-
-            <div class="service-content">
-                <h1>Desenvolvimento Web</h1>
-                <p>Construímos sites, sistemas e plataformas responsivas, rápidas e otimizadas para gerar resultados
-                    reais para o seu negócio.</p>
-            </div>
-            <div class="service-content">
-                <h1>Automações e Integrações</h1>
-                <p>Automatizamos processos repetitivos e integramos diferentes ferramentas com eficiência usando nossa
-                    expertise em APIs, bots e fluxos inteligentes.</p>
-            </div>
-            <div class="service-content">
-                <h1>Softwares sob medida</h1>
-                <p>Projetamos e desenvolvemos sistemas exclusivos, adaptados 100% às necessidades e realidade da sua
-                    empresa ou projeto.</p>
-            </div>
-
-        </section>
 
         <section id="products" class="products">
             <div class="product-content">
-                <img src="images/falamecanico.png" alt="Fala Mecânico chatbot produto">
-                <h1>Fala Mecânico</h1>
-                <p>Assinatura via WhatsApp com IA especializada para oficinas. Tire dúvidas mecânicas em tempo real com
-                    uma inteligência treinada para mecânicos e reparadores 24h.</p>
-                <a href="https://falamecanico.vercel.app/" target="_blank"> <button>Assinar</button></a>
+                <img src="images/todentro.png" alt="Fala Mecânico chatbot produto">
+                <h1>Tô Dentro</h1>
+                <p>ToDentro é uma plataforma de check-in digital para gestão de eventos, reuniões e atividades.
+                    Oferecemos uma solução simples, rápida e
+                    eficiente para confirmar presenças através de QR Code.</p>
+                <a href="https://wa.me/5532999526526?text=Olá!%20Tenho%20interesse%20em%20um%20chatbot%20com%20IA%20para%20meu%20negócio.%20Podemos%20conversar?" target="_blank"> <button>Saiba mais</button></a>
             </div>
 
             <div class="product-content">
@@ -128,8 +110,88 @@
             <a href="products.html">Ver mais</a>
         </section>
 
-        <hr>
+        <!-- SEÇÃO DE SERVIÇOS MODIFICADA -->
+        <section id="services" class="services">
+
+            <div class="service-content fade-in-element">
+                <!-- Ícone Estático (Lucide Icons) -->
+                <i class="service-icon" data-lucide="code-2"></i>
+                <h1>Desenvolvimento Web</h1>
+                <p>Construímos sites, sistemas e plataformas responsivas, rápidas e otimizadas para gerar resultados
+                    reais para o seu negócio.</p>
+            </div>
+
+            <div class="service-content fade-in-element">
+                 <!-- Ícone Estático (Lucide Icons) -->
+                <i class="service-icon" data-lucide="git-pull-request"></i>
+                <h1>Automações e Integrações</h1>
+                <p>Automatizamos processos repetitivos e integramos diferentes ferramentas com eficiência usando nossa
+                    expertise em APIs, bots e fluxos inteligentes.</p>
+            </div>
+
+            <div class="service-content fade-in-element">
+                 <!-- Ícone Estático (Lucide Icons) -->
+                <i class="service-icon" data-lucide="layout-template"></i>
+                <h1>Softwares sob medida</h1>
+                <p>Projetamos e desenvolvemos sistemas exclusivos, adaptados 100% às necessidades e realidade da sua
+                    empresa ou projeto.</p>
+            </div>
+
+        </section>
+
+        
     </div>
+
+    <!-- NOVA SEÇÃO DO CARROSSEL DE PORTFÓLIO -->
+    <section class="portfolio-section">
+        <h1>Conheça alguns dos nossos sites</h1>
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- Item 1 -->
+                    <div class="carousel-item">
+                        <a href="https://www.forneria360.com" target="_blank">
+                            <img src="images/forneria.png" alt="Preview do site do Cliente 1">
+                            <h3>Forneria 360</h3>
+                        </a>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="carousel-item">
+                        <a href="https://www.advocaciaconrado.com/" target="_blank">
+                            <img src="images/conrado.png" alt="Preview do site do Cliente 2">
+                            <h3>Conrado Carvalho</h3>
+                        </a>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="carousel-item">
+                        <a href="https://orquestra-med.vercel.app/" target="_blank">
+                            <img src="images/orquestra2.png" alt="Preview do site do Cliente 3">
+                            <h3>Orquestra</h3>
+                        </a>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="carousel-item">
+                        <a href="https://silvaneves.com.br/" target="_blank">
+                            <img src="images/silvaneves.png" alt="Preview do site do Cliente 4">
+                            <h3>Silva Neves</h3>
+                        </a>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="carousel-item">
+                        <a href="site5.com" target="_blank">
+                            <img src="images/lgnd.png" alt="Preview do site do Cliente 5">
+                            <h3>Legendários</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev-btn"><i data-lucide="chevron-left"></i></button>
+            <button class="carousel-btn next-btn"><i data-lucide="chevron-right"></i></button>
+        </div>
+        <div class="carousel-dots"></div>
+        <hr class="hrbt">
+    </section>
+
 
     <section id="contact" class="contact">
         <a href="#"><img src="images/logo.png" alt="logo bitbloom ai"></a>
@@ -168,6 +230,10 @@
     </p>
     <footer>&copy; 2025 BitBloom AI — Inove, floresça.</footer>
 
+    <!-- SCRIPT DA BIBLIOTECA LUCIDE ICONS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- SEU SCRIPT -->
     <script src="script.js"></script>
 
 </body>

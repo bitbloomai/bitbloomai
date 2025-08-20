@@ -185,7 +185,7 @@ body.no-scroll {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    padding: 20vh 0;
+    padding: 20vh 0 0 0;
 
     font-size: 20px;
 }
@@ -216,9 +216,54 @@ button:hover {
     gap: 100px;
 }
 
+/* --- ESTILOS CORRIGIDOS E MELHORADOS --- */
+
 .service-content {
     text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    /* A transição foi movida para a classe .fade-in-element 
+      para melhor controle da animação de entrada e do hover.
+    */
 }
+
+/* Estilo para o ícone Lucide */
+.service-icon {
+    width: 64px;
+    height: 64px;
+    stroke-width: 1.5; /* Espessura da linha do ícone */
+    color: #2e93e6; /* Cor principal do site */
+    margin: 0 auto 20px auto; /* Centraliza e adiciona espaço abaixo */
+}
+
+/* Classes para a animação de surgimento ao rolar */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Transição mais rápida para o transform (hover) e mais lenta para a opacidade (entrada) */
+    transition: opacity 0.8s ease-out, transform 0.3s ease-in-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito hover CORRIGIDO: aplica o scale apenas quando o elemento já está visível */
+.fade-in-element.is-visible:hover {
+    transform: scale(1.05);
+}
+
+/* Adicionando um atraso para cada card aparecer em sequência */
+.service-content:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.service-content:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+/* --- FIM DOS ESTILOS CORRIGIDOS --- */
+
 
 .products {
     display: flex;
@@ -235,6 +280,8 @@ button:hover {
 
 .product-content>img {
     width: 30vw;
+    border-radius: 15px;
+    box-shadow: black;
 }
 
 .product-content>h1 {}
@@ -292,6 +339,162 @@ footer {
     padding: 5px;
 }
 
+/* --- ESTILOS DO CARROSSEL DE PORTFÓLIO (ATUALIZADO) --- */
+.portfolio-section {
+    padding:  0;
+    margin-top: 80px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.portfolio-section h1 {
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.carousel-container {
+    position: relative;
+    height: 550px; /* Aumenta a altura para dar espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none; /* Desativa cliques em itens não ativos */
+}
+
+.carousel-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px; /* Largura fixa do card */
+    transition: transform 0.3s ease;
+}
+
+.carousel-item a:hover {
+    transform: scale(1.05);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.carousel-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Posições dos 3 slides visíveis */
+.carousel-item.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.carousel-item.prev {
+    opacity: 1;
+    transform: translateX(-30%) scale(0.85) translateY(-20px);
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.carousel-item.next {
+    opacity: 1;
+    transform: translateX(30%) scale(0.85) translateY(-20px);
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 40%; /* Alinha com o meio das imagens */
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Aumenta a distância */
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.dot.active {
+    background-color: #2e93e6;
+    width: 30px; /* Largura da "bisnaguinha" */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* --- FIM DOS ESTILOS DO CARROSSEL --- */
+
 /* products page */
 #main-product {
     background: url(images/wp-products.jpg);
@@ -329,6 +532,13 @@ footer {
     width: 50vw;
 }
 
+.hrbt {
+    margin-left: 110px;
+    margin-right: 110px;
+    align-items:center;
+    margin-top: 100px;
+}
+
 @media(max-width: 750px) {
 
     header>nav {
@@ -353,7 +563,7 @@ footer {
     }
 
     .about {
-        padding: 10vh 0;
+        padding: 10vh 0 0 0;
         font-size: 15px;
     }
 
@@ -396,5 +606,10 @@ footer {
 
     .socials {
         text-align: center;
+    }
+
+    .carousel-item.prev a,
+    .carousel-item.next a {
+        filter: brightness(0.5);
     }
 }
