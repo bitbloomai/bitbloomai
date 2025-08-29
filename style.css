@@ -503,11 +503,6 @@ footer {
 }
 
 @media (max-width:420px) {
-
-    /* celular:
-
-**ver se tem como deixar vídei inclicável.
-*/
     .main {
         min-height: 70svh;
         font-size: 19px;
@@ -536,17 +531,5 @@ footer {
 
 
 /* 
-
-GERAL
-**corrigir viewpoert no html para ficar bem responsivo iOS
-**corrigir bold btn claro
-
-
->>>>>design imagens products >
-otimizar imagens
-organizar pastas
-postar.
-
 posteriormente criar pág produtos e serviços (como tabela de serviço estilo footer da apple com acordeon)
-
 */
